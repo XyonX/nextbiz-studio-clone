@@ -18,6 +18,7 @@ Build one polished, responsive homepage that closely recreates both supplied age
 
 ## Visual fidelity
 - Match the references’ warm white canvas, thin dividers, restrained black typography, small rounded labels, image corner treatments, handwritten annotations, spacing, and dense editorial rhythm.
+- Build every distinctive button, card, statistic block, project tile, label, and control as a purpose-made component matching the references; do not fall back to generic UI-kit treatments.
 - Use the uploaded NB artwork as the site logo and derive the favicon from it.
 - Create cohesive supporting photography that closely matches the subjects and framing shown in the references, without copying third-party identities or logos.
 - Keep the desktop composition faithful while adapting the same hierarchy cleanly for phones and tablets.
