@@ -90,6 +90,7 @@ function Stat({ icon: Icon, amount, copy }: { icon: typeof Trophy; amount: strin
 function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [story, setStory] = useState(0);
+  const currentStory = testimonials[story] ?? testimonials[0];
 
   return (
     <main id="home" className="site-shell">
@@ -146,7 +147,7 @@ function HomePage() {
       </section>
 
       <section className="testimonial section-pad">
-        <div className="quote-side"><Label>Client Stories</Label><blockquote>“{testimonials[story].quote}”</blockquote><div className="quote-meta"><img src={aboutImage} alt="Client portrait" /><span><b>{testimonials[story].name}</b><small>{testimonials[story].role}</small><em>★★★★★</em></span></div><div className="quote-controls"><button aria-label="Previous testimonial" onClick={() => setStory((story + testimonials.length - 1) % testimonials.length)}><ArrowLeft /></button><button aria-label="Next testimonial" onClick={() => setStory((story + 1) % testimonials.length)}><ArrowRight /></button></div></div>
+        <div className="quote-side"><Label>Client Stories</Label><blockquote>“{currentStory.quote}”</blockquote><div className="quote-meta"><img src={aboutImage} alt="Client portrait" /><span><b>{currentStory.name}</b><small>{currentStory.role}</small><em>★★★★★</em></span></div><div className="quote-controls"><button aria-label="Previous testimonial" onClick={() => setStory((story + testimonials.length - 1) % testimonials.length)}><ArrowLeft /></button><button aria-label="Next testimonial" onClick={() => setStory((story + 1) % testimonials.length)}><ArrowRight /></button></div></div>
         <div className="quote-image"><img src={heroImage} loading="lazy" alt="Happy NextBiz Studio client" /><span className="scribble">Real<br />People.<br />Real<br />Impact.</span></div>
       </section>
 
