@@ -65,7 +65,7 @@ const projects = [
 const testimonials = [
   { quote: "NextBiz Studio transformed our brand completely. Their creativity and strategic thinking are unmatched.", name: "Sarah Johnson", role: "CEO, NextGen" },
   { quote: "The team made a complex challenge feel effortless. The result is clear, confident and completely us.", name: "Marcus Lee", role: "Founder, Velora" },
-];
+] as const;
 
 function scrollTo(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
