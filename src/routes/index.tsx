@@ -25,7 +25,7 @@ import {
   Youtube,
 } from "lucide-react";
 
-import logoAsset from "@/assets/nextbiz-studio-logo.png.asset.json";
+import logoAsset from "@/assets/nextbiz-studio-logo-dark.png.asset.json";
 import heroImage from "@/assets/nextbiz-hero.jpg";
 import aboutImage from "@/assets/nextbiz-about.jpg";
 import stillLifeImage from "@/assets/nextbiz-studio-stilllife.jpg";
@@ -111,7 +111,7 @@ function HomePage() {
           <p>World’s best creative agency team — crafting legendary brands through bold ideas, strategic genius, and flawless execution that dominates the global stage.</p>
           <div className="hero-actions"><Action to="contact" dark>Get Started</Action><a href="#projects" onClick={(e) => { e.preventDefault(); scrollTo("projects"); }} className="watch"><CirclePlay size={32} strokeWidth={1.2} /> Watch Demo</a></div>
         </div>
-        <div className="hero-visual"><div className="yellow-block" /><img src={heroImage} width={1200} height={1008} alt="Creative director working in a sunlit studio" /><span className="scribble hero-note">Ideas<br />become<br />impact.</span></div>
+        <div className="hero-visual"><div className="hero-accent-block" /><img src={heroImage} width={1200} height={1008} alt="Creative director working in a sunlit studio" /><span className="scribble hero-note">Ideas<br />become<br />impact.</span></div>
       </section>
 
       <section className="partners" aria-label="Trusted partners"><Label>Trusted Partners Worldwide for Success</Label><div className="partner-row"><span>align</span><i>•</i><span>BÜNGE</span><i>•</i><span>DISCOVER</span><i>•</i><span>ESSEX</span><i>•</i><span>HOLOGIC</span><i>•</i><span>Insulet</span><i>•</i><span>MASCO</span></div></section>
