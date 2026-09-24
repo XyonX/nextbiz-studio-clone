@@ -1,0 +1,4 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { SitePage } from "@/components/site-page";
+export const Route = createFileRoute("/terms")({ component: TermsPage });
+function TermsPage() { return <SitePage label="Legal" title={<>Terms of<br />service.</>} intro="The terms that guide our website and studio relationships."><article className="legal-copy section-pad"><h2>Using this website</h2><p>Content on this website is provided for general information and may change without notice. Please do not reproduce studio work without permission.</p><h2>Studio engagements</h2><p>Project scope, fees, timelines and ownership are agreed in writing before work begins. Each engagement is governed by its signed agreement.</p><h2>Questions</h2><p>For questions about these terms, contact hello@nextbiz.studio.</p></article></SitePage>; }

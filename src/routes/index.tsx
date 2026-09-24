@@ -45,7 +45,7 @@ export const Route = createFileRoute("/")({
 });
 
 const navItems = [
-  ["Home", "home"], ["About Us", "about"], ["Services", "services"], ["Projects", "projects"], ["Team", "team"],
+  ["Home", "/"], ["About Us", "/about"], ["Services", "/services"], ["Projects", "/projects"], ["Team", "/about#team"],
 ] as const;
 
 const services = [
@@ -71,7 +71,7 @@ function scrollTo(id: string) {
 }
 
 function Brand({ compact = false }: { compact?: boolean }) {
-  return <a href="#home" className="brand" aria-label="NextBiz Studio home"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-dark-Mjq6QLLvql8SIWpTm74w4mGFPQBv7W.png" alt="NextBiz Studio logo" /><span>{compact ? "NextBiz" : "NextBiz Studio"}</span></a>;
+  return <a href="/" className="brand" aria-label="NextBiz Studio home"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-dark-Mjq6QLLvql8SIWpTm74w4mGFPQBv7W.png" alt="NextBiz Studio logo" /><span>{compact ? "NextBiz" : "NextBiz Studio"}</span></a>;
 }
 
 function Label({ children }: { children: React.ReactNode }) {
@@ -180,11 +180,11 @@ function HomePage() {
       <header className="topbar">
         <Brand />
         <nav aria-label="Main navigation">
-          {navItems.map(([label, id]) => <a key={id} href={`#${id}`} onClick={(e) => { e.preventDefault(); scrollTo(id); }}>{label}{label === "Services" && <ChevronDown size={12} />}</a>)}
+          {navItems.map(([label, href]) => <a key={href} href={href}>{label}{label === "Services" && <ChevronDown size={12} />}</a>)}
         </nav>
         <a href="tel:22003567890" className="call"><Phone size={17} /><span><small>Call Any Time</small><b>22 (00) 356 7890</b></span></a>
         <button className="menu-toggle" aria-label={menuOpen ? "Close menu" : "Open menu"} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : <Menu />}</button>
-        {menuOpen && <div className="mobile-menu">{navItems.map(([label, id]) => <a key={id} href={`#${id}`} onClick={(e) => { e.preventDefault(); setMenuOpen(false); scrollTo(id); }}>{label}</a>)}</div>}
+        {menuOpen && <div className="mobile-menu"><div className="mobile-menu-links">{navItems.map(([label, href]) => <a key={href} href={href} onClick={() => setMenuOpen(false)}>{label}</a>)}</div><a className="action action-dark" href="/contact" onClick={() => setMenuOpen(false)}><span>Start a conversation</span><ArrowRight size={14} /></a><div className="mobile-menu-legal"><a href="/privacy-policy">Privacy Policy</a><a href="/terms">Terms</a></div></div>}
       </header>
 
       <section className="hero section-pad">
