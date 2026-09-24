@@ -9,9 +9,12 @@ Add polished movement that makes the homepage feel more alive without changing i
 - Keep motion short, soft, and editorial; avoid bouncing, dramatic zooming, spinning, or decorative effects that would make the site feel less premium.
 - Let reveals run once per page visit so scrolling back remains calm.
 
-## Hero detail
+## Breathing accents
 - Animate the circular symbol in “Creative Ideas That Inspire Growth” with a slow breathing scale and faint ring expansion.
-- Keep the text and label stable so readability and layout do not shift.
+- Reuse that breathing rhythm selectively on the small symbols inside section labels, the hero play icon, key phone icons, and the contact arrow.
+- Give image-side handwritten notes a much softer, slower drift so they feel lightly hand-placed rather than static.
+- Keep all text, cards, photographs, and layout containers stable; breathing will be limited to small accent elements so the page never feels busy.
+- Offset the timing between accents so they do not pulse together.
 
 ## Custom cursor
 - Add a bespoke minimal circular cursor on desktop devices with a precise center point and a softly trailing outer ring.
