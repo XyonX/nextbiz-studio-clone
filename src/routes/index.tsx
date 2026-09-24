@@ -25,7 +25,6 @@ import {
   Youtube,
 } from "lucide-react";
 
-import logoAsset from "@/assets/nextbiz-studio-logo-dark.png.asset.json";
 import heroImage from "@/assets/nextbiz-hero.jpg";
 import aboutImage from "@/assets/nextbiz-about.jpg";
 import stillLifeImage from "@/assets/nextbiz-studio-stilllife.jpg";
@@ -72,7 +71,7 @@ function scrollTo(id: string) {
 }
 
 function Brand({ compact = false }: { compact?: boolean }) {
-  return <a href="#home" className="brand" aria-label="NextBiz Studio home"><img src={logoAsset.url} alt="" /><span>{compact ? "NextBiz" : "NextBiz Studio"}</span></a>;
+  return <a href="#home" className="brand" aria-label="NextBiz Studio home"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-dark-Mjq6QLLvql8SIWpTm74w4mGFPQBv7W.png" alt="NextBiz Studio logo" /><span>{compact ? "NextBiz" : "NextBiz Studio"}</span></a>;
 }
 
 function Label({ children }: { children: React.ReactNode }) {
