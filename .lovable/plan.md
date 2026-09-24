@@ -9,10 +9,17 @@ Add polished movement that makes the homepage feel more alive without changing i
 - Keep motion short, soft, and editorial; avoid bouncing, dramatic zooming, spinning, or decorative effects that would make the site feel less premium.
 - Let reveals run once per page visit so scrolling back remains calm.
 
+## Ambient and interactive details
+- Add a varied set of quiet looping details rather than repeating one effect everywhere: slow icon breathing, tiny arrow drift, gentle underline travel, restrained image-note float, and a soft line sweep on selected accents.
+- Enhance custom actions and text links with directional arrow movement and a subtle fill or line response on hover.
+- Give service rows, project imagery, statistics, social links, industry icons, and testimonial controls distinct but related hover feedback suited to each element.
+- Add brief press feedback on clickable controls so interactions feel tactile without changing their custom shapes.
+- Keep ambient loops sparse, independently timed, and paused where appropriate during direct interaction so the page feels crafted rather than constantly moving.
+
 ## Breathing accents
 - Animate the circular symbol in “Creative Ideas That Inspire Growth” with a slow breathing scale and faint ring expansion.
-- Reuse that breathing rhythm selectively on the small symbols inside section labels, the hero play icon, key phone icons, and the contact arrow.
-- Give image-side handwritten notes a much softer, slower drift so they feel lightly hand-placed rather than static.
+- Reuse that breathing rhythm selectively on a few small symbols inside section labels and key phone icons; use different motion styles for other accents.
+- Let the hero play icon carry a soft orbiting ring, the contact arrow drift diagonally, and image-side handwritten notes float almost imperceptibly.
 - Keep all text, cards, photographs, and layout containers stable; breathing will be limited to small accent elements so the page never feels busy.
 - Offset the timing between accents so they do not pulse together.
 
