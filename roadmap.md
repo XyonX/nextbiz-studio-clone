@@ -3,4 +3,4 @@
 - [x] Build the complete responsive homepage with custom UI pieces
 - [x] Add metadata and favicon
 - [x] Verify desktop/mobile visuals and interactions
-- [ ] Add refined scroll, ambient, hover, click, and custom cursor motion
+- [x] Add refined scroll, ambient, hover, click, and custom cursor motion
