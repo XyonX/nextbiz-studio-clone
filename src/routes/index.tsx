@@ -114,7 +114,7 @@ function CustomCursor() {
   useEffect(() => {
     const finePointer = window.matchMedia("(pointer: fine)");
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (!finePointer.matches || reducedMotion.matches) return;
+    if (!finePointer.matches || reducedMotion.matches || window.innerWidth <= 760) return;
     const dot = dotRef.current;
     const ring = ringRef.current;
     if (!dot || !ring) return;
