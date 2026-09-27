@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import {
   ArrowDownRight,
@@ -181,11 +181,11 @@ function HomePage() {
       <header className="topbar">
         <Brand />
         <nav aria-label="Main navigation">
-          {navItems.map(([label, id]) => <a key={id} href={`#${id}`} onClick={(e) => { e.preventDefault(); scrollTo(id); }}>{label}{label === "Services" && <ChevronDown size={12} />}</a>)}
+          {navItems.map(([label, id]) => label === "About Us" ? <Link key={id} to="/about">{label}</Link> : <a key={id} href={`#${id}`} onClick={(e) => { e.preventDefault(); scrollTo(id); }}>{label}{label === "Services" && <ChevronDown size={12} />}</a>)}
         </nav>
         <a href="tel:22003567890" className="call"><Phone size={17} /><span><small>Call Any Time</small><b>22 (00) 356 7890</b></span></a>
         <button className="menu-toggle" aria-label={menuOpen ? "Close menu" : "Open menu"} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : <Menu />}</button>
-        {menuOpen && <div className="mobile-menu">{navItems.map(([label, id]) => <a key={id} href={`#${id}`} onClick={(e) => { e.preventDefault(); setMenuOpen(false); scrollTo(id); }}>{label}</a>)}</div>}
+        {menuOpen && <div className="mobile-menu">{navItems.map(([label, id]) => label === "About Us" ? <Link key={id} to="/about" onClick={() => setMenuOpen(false)}>{label}</Link> : <a key={id} href={`#${id}`} onClick={(e) => { e.preventDefault(); setMenuOpen(false); scrollTo(id); }}>{label}</a>)}</div>}
       </header>
 
       <section className="hero section-pad">
@@ -209,7 +209,7 @@ function HomePage() {
             <Stat icon={BriefcaseBusiness} amount="10+" copy="Experience you can count on" />
             <Stat icon={Trophy} amount="20+" copy="Award-Winning Work, Trusted Results" />
             <Stat icon={Users} amount="5K+" copy="We have happy Clients worldwide" />
-            <div className="about-actions"><Action to="services" dark>More About Us</Action><a className="inline-call" href="tel:22003567890"><Phone size={17} /><span><small>Call Free Quote</small><b>22 (00) 356 7890</b></span></a></div>
+            <div className="about-actions"><Link to="/about" className="action action-dark"><span>More About Us</span><ArrowRight size={14} /></Link><a className="inline-call" href="tel:22003567890"><Phone size={17} /><span><small>Call Free Quote</small><b>22 (00) 356 7890</b></span></a></div>
           </div>
         </div>
       </section>
@@ -244,7 +244,7 @@ function HomePage() {
 
       <footer className="footer section-pad reveal-stagger" data-reveal>
         <div className="footer-brand"><Brand /><p>A creative agency focused on building brands, products and experiences that make a difference.</p><div><a href="#" aria-label="Instagram"><Instagram /></a><a href="#" aria-label="LinkedIn"><Linkedin /></a><a href="#" aria-label="YouTube"><Youtube /></a></div></div>
-        <div className="footer-links"><b>Quick Links</b>{navItems.slice(0,4).map(([label,id]) => <a key={id} href={`#${id}`}>{label}</a>)}</div>
+         <div className="footer-links"><b>Quick Links</b>{navItems.slice(0,4).map(([label,id]) => label === "About Us" ? <Link key={id} to="/about">{label}</Link> : <a key={id} href={`#${id}`}>{label}</a>)}</div>
         <div className="footer-links"><b>Our Services</b>{services.map((s) => <a key={s.n} href="#services">{s.title.replace(" & Identity", "").replace(" & Development", "")}</a>)}</div>
         <div className="footer-links"><b>Resources</b><a href="#projects">Blog</a><a href="#projects">Case Studies</a><a href="#contact">Help Center</a><a href="#">Privacy Policy</a></div>
         <div className="newsletter"><b>Subscribe to our newsletter</b><p>Get the latest updates and insights.</p><div><label className="sr-only" htmlFor="email">Your email address</label><input id="email" type="email" placeholder="Your email address" /><button aria-label="Subscribe"><ArrowRight /></button></div></div>
