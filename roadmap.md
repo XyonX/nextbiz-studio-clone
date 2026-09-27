@@ -4,3 +4,4 @@
 - [x] Add metadata and favicon
 - [x] Verify desktop/mobile visuals and interactions
 - [x] Add refined scroll, ambient, hover, click, and custom cursor motion
+- [x] Add dedicated About page with homepage and return navigation
