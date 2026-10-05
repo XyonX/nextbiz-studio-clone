@@ -5,7 +5,8 @@ import {
   ArrowLeft,
   ArrowRight,
   ArrowUpRight,
-  BriefcaseBusiness,
+  Compass,
+  Construction,
   Building2,
   ChevronDown,
   CirclePlay,
@@ -19,8 +20,8 @@ import {
   Palette,
   Phone,
   ShoppingBag,
-  Trophy,
-  Users,
+  SlidersHorizontal,
+  RefreshCw,
   X,
   Youtube,
 } from "lucide-react";
@@ -34,10 +35,10 @@ import teamImage from "@/assets/nextbiz-team.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "NextBiz Studio | Creative Agency" },
-      { name: "description", content: "Ideas into impact. NextBiz Studio builds brands through strategy, design, technology and marketing." },
-      { property: "og:title", content: "NextBiz Studio | Creative Agency" },
-      { property: "og:description", content: "Ideas into impact. Branding, web design, digital marketing and creative strategy." },
+      { title: "NextBiz Studio | Your Digital Team, When You Need It" },
+      { name: "description", content: "NextBiz Studio is your digital team when you need it, building websites, products, marketing systems and growth tools around your business." },
+      { property: "og:title", content: "NextBiz Studio | Your Digital Team, When You Need It" },
+      { property: "og:description", content: "Digital solutions, marketing support and technology built around the way your business works." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -50,10 +51,10 @@ const navItems = [
 ] as const;
 
 const services = [
-  { n: "01", title: "Branding & Identity", copy: "Distinctive brand identities that make a lasting impression." },
-  { n: "02", title: "Web Design & Development", copy: "Modern, high-performing websites and web applications." },
-  { n: "03", title: "Digital Marketing", copy: "Data-driven marketing that delivers real growth." },
-  { n: "04", title: "Creative Strategy", copy: "Bold ideas underpinned by strategic thinking to move your business forward." },
+  { n: "01", title: "Web & Digital Products", copy: "Modern websites, web applications, digital platforms and interfaces built around your workflow." },
+  { n: "02", title: "Marketing & Growth", copy: "Social media, ad creation, campaigns, marketing creatives and simpler advertising workflows." },
+  { n: "03", title: "WhatsApp & Meta Solutions", copy: "Practical communication and conversational workflows built around Meta platforms." },
+  { n: "04", title: "Marketing Tech & Meta Proxy", copy: "A product we are bringing to market to simplify WABA infrastructure, storage and WhatsApp workflows." },
 ];
 
 const projects = [
@@ -83,7 +84,7 @@ function Action({ children, to, dark = false }: { children: React.ReactNode; to:
   return <a href={`#${to}`} onClick={(e) => { e.preventDefault(); scrollTo(to); }} className={`action ${dark ? "action-dark" : ""}`}><span>{children}</span><ArrowRight size={14} /></a>;
 }
 
-function Stat({ icon: Icon, amount, copy }: { icon: typeof Trophy; amount: string; copy: string }) {
+function Stat({ icon: Icon, amount, copy }: { icon: typeof Compass; amount: string; copy: string }) {
   return <article className="stat"><Icon size={26} strokeWidth={1.4} /><div><strong>{amount}</strong><p>{copy}</p></div></article>;
 }
 
@@ -191,31 +192,31 @@ function HomePage() {
       <section className="hero section-pad">
         <div className="hero-copy is-revealed" data-reveal>
           <Label>Creative Ideas That Inspire Growth</Label>
-          <h1>World’s Best Creative<br />Agency Team</h1>
-          <p>World’s best creative agency team — crafting legendary brands through bold ideas, strategic genius, and flawless execution that dominates the global stage.</p>
+           <h1>Your Digital Team,<br />When You Need It</h1>
+           <p>We help businesses build, improve and grow through thoughtful digital solutions, marketing support and technology shaped around the way they work.</p>
           <div className="hero-actions"><Action to="contact" dark>Get Started</Action><a href="#projects" onClick={(e) => { e.preventDefault(); scrollTo("projects"); }} className="watch"><CirclePlay size={32} strokeWidth={1.2} /> Watch Demo</a></div>
         </div>
         <div className="hero-visual is-revealed" data-reveal><div className="hero-accent-block" /><img src={heroImage} width={1200} height={1008} alt="Creative director working in a sunlit studio" /><span className="scribble hero-note ambient-float">Ideas<br />become<br />impact.</span></div>
       </section>
 
-      <section className="partners reveal-stagger" aria-label="Trusted partners" data-reveal><Label>Trusted Partners Worldwide for Success</Label><div className="partner-row"><span>align</span><i>•</i><span>BÜNGE</span><i>•</i><span>DISCOVER</span><i>•</i><span>ESSEX</span><i>•</i><span>HOLOGIC</span><i>•</i><span>Insulet</span><i>•</i><span>MASCO</span></div></section>
+       <section className="partners reveal-stagger" aria-label="One Studio, Different Needs" data-reveal><Label>One Studio, Different Needs</Label><div className="partner-row"><span>STARTUPS</span><i>•</i><span>SMALL BUSINESSES</span><i>•</i><span>TEAMS</span><i>•</i><span>PRODUCTS</span><i>•</i><span>BRANDS</span><i>•</i><span>DIGITAL</span><i>•</i><span>IDEAS</span></div></section>
 
       <section id="about" className="about section-pad">
         <div className="section-heading centered" data-reveal><Label>About Us</Label><h2>Who We Are. Learn About us</h2><p>We are a dynamic team of innovators, storytellers, and visionaries dedicated<br className="desktop-only" /> to transforming ideas into extraordinary experiences.</p></div>
         <div className="about-grid reveal-stagger" data-reveal>
           <div className="about-photo"><img src={aboutImage} loading="lazy" width={1008} height={1104} alt="NextBiz Studio creative strategist" /></div>
           <div className="stats-grid">
-            <Stat icon={BriefcaseBusiness} amount="200+" copy="We deliver great work always" />
-            <Stat icon={BriefcaseBusiness} amount="10+" copy="Experience you can count on" />
-            <Stat icon={Trophy} amount="20+" copy="Award-Winning Work, Trusted Results" />
-            <Stat icon={Users} amount="5K+" copy="We have happy Clients worldwide" />
+             <Stat icon={Compass} amount="01" copy="PLAN — Understand the idea, goals, audience, and requirements." />
+             <Stat icon={Construction} amount="02" copy="BUILD — Turn the direction into a real digital experience." />
+             <Stat icon={SlidersHorizontal} amount="03" copy="IMPROVE — Review, test, refine, and make the details better." />
+             <Stat icon={RefreshCw} amount="04" copy="ITERATE — Launch, learn, and keep improving as needed." />
             <div className="about-actions"><Link to="/about" className="action action-dark"><span>More About Us</span><ArrowRight size={14} /></Link><a className="inline-call" href="tel:22003567890"><Phone size={17} /><span><small>Call Free Quote</small><b>22 (00) 356 7890</b></span></a></div>
           </div>
         </div>
       </section>
 
       <section id="services" className="services section-pad split-section">
-        <div className="services-intro" data-reveal><Label>Our Services</Label><h2>Ideas<br />Into Impact.</h2><p>We combine strategy, design, technology and marketing to build brands that grow, engage and lead.</p><Action to="projects" dark>Explore Our Services</Action><span className="scribble services-note ambient-float">Strategy<br />Design<br />Technology<br />All Together <ArrowUpRight size={34} /></span></div>
+         <div className="services-intro" data-reveal><Label>Our Services</Label><h2>Ideas<br />Into Impact.</h2><p>We bring digital solutions, marketing and growth support together so businesses can get the right help without building a full in-house team.</p><Action to="contact" dark>Explore Our Services</Action><span className="scribble services-note ambient-float">Strategy<br />Design<br />Technology<br />Growth<br />Together <ArrowUpRight size={34} /></span></div>
         <div className="service-list reveal-stagger" data-reveal>{services.map((service) => <a href="#contact" key={service.n} onClick={(e) => { e.preventDefault(); scrollTo("contact"); }}><span>{service.n}</span><div><h3>{service.title}</h3><p>{service.copy}</p></div><ArrowUpRight size={18} /></a>)}</div>
         <div className="service-photo" data-reveal><img src={stillLifeImage} loading="lazy" width={1408} height={912} alt="Brand strategy workspace" /><div className="photo-card">Good<br />Brands<br />Better<br />People<sup>™</sup></div><div className="sticky-note scribble ambient-float">Ideas<br />that<br />work!</div></div>
       </section>
