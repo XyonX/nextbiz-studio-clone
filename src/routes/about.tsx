@@ -28,7 +28,11 @@ const principles = [
   ["04", "Built for the long view", "We make decisions that keep working after the launch moment has passed."],
 ] as const;
 
-const navItems = ["About", "Approach", "Team"] as const;
+const navItems = [
+  { label: "Home", to: "/" },
+  { label: "About", to: "/about" },
+  { label: "Services", to: "/services" },
+] as const;
 
 function AboutBrand() {
   return (
@@ -46,9 +50,9 @@ function AboutPage() {
     <main className="about-page">
       <header className="about-topbar">
         <AboutBrand />
-        <nav aria-label="About page navigation">
-          {navItems.map((item) => (
-            <a key={item} href={`#${item.toLowerCase()}`}>{item}</a>
+        <nav aria-label="Main navigation">
+          {navItems.map(({ label, to }) => (
+            <Link key={label} to={to}>{label}</Link>
           ))}
         </nav>
         <Link to="/" className="about-back"><ArrowLeft size={14} /> Back to Home</Link>
@@ -57,7 +61,7 @@ function AboutPage() {
         </button>
         {menuOpen && (
           <div className="about-mobile-menu">
-            {navItems.map((item) => <a key={item} href={`#${item.toLowerCase()}`} onClick={() => setMenuOpen(false)}>{item}</a>)}
+            {navItems.map(({ label, to }) => <Link key={label} to={to} onClick={() => setMenuOpen(false)}>{label}</Link>)}
             <Link to="/" onClick={() => setMenuOpen(false)}><ArrowLeft size={14} /> Back to Home</Link>
           </div>
         )}
@@ -117,7 +121,7 @@ function AboutPage() {
 
       <footer className="about-footer about-pad">
         <div><AboutBrand /><p>A creative agency focused on building brands, products and experiences that make a difference.</p></div>
-        <div className="about-footer-links"><b>Explore</b><Link to="/">Home</Link><a href="#approach">Our approach</a><a href="#team">Our team</a></div>
+        <div className="about-footer-links"><b>Explore</b><Link to="/">Home</Link><Link to="/services">Services</Link><a href="#approach">Our approach</a><a href="#team">Our team</a></div>
         <div className="about-footer-mark"><span className="scribble">Ideas into<br />impact.</span><Link to="/" className="about-back"><ArrowLeft size={14} /> Back to Home</Link></div>
         <div className="about-copyright"><span>© 2026 NextBiz Studio. All rights reserved.</span><span>Made with intent.</span></div>
       </footer>
