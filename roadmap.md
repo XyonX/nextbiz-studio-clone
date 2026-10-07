@@ -6,3 +6,4 @@
 - [x] Add refined scroll, ambient, hover, click, and custom cursor motion
 - [x] Add dedicated About page with homepage and return navigation
 - [x] Replace homepage demo messaging with NextBiz Studio business content
+- [ ] Build dedicated Services page and link global navigation to implemented pages only

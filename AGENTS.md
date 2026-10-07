@@ -11,3 +11,4 @@
 
 ## Project decisions
 - Dedicated editorial pages use TanStack file routes and preserve the homepage's bespoke visual language, so shareable content has its own navigation and metadata.
+- Global navigation links only to implemented pages; homepage sections remain available by scrolling and page-local links.

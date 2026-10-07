@@ -8,7 +8,6 @@ import {
   Compass,
   Construction,
   Building2,
-  ChevronDown,
   CirclePlay,
   Code2,
   GraduationCap,
@@ -47,14 +46,16 @@ export const Route = createFileRoute("/")({
 });
 
 const navItems = [
-  ["Home", "home"], ["About Us", "about"], ["Services", "services"], ["Projects", "projects"], ["Team", "team"],
+  { label: "Home", to: "/" },
+  { label: "About Us", to: "/about" },
+  { label: "Services", to: "/services" },
 ] as const;
 
 const services = [
-  { n: "01", title: "Web & Digital Products", copy: "Modern websites, web applications, digital platforms and interfaces built around your workflow." },
-  { n: "02", title: "Marketing & Growth", copy: "Social media, ad creation, campaigns, marketing creatives and simpler advertising workflows." },
-  { n: "03", title: "WhatsApp & Meta Solutions", copy: "Practical communication and conversational workflows built around Meta platforms." },
-  { n: "04", title: "Marketing Tech & Meta Proxy", copy: "A product we are bringing to market to simplify WABA infrastructure, storage and WhatsApp workflows." },
+  { n: "01", slug: "web-digital-products", title: "Web & Digital Products", copy: "Modern websites, web applications, digital platforms and interfaces built around your workflow." },
+  { n: "02", slug: "marketing-growth", title: "Marketing & Growth", copy: "Social media, ad creation, campaigns, marketing creatives and simpler advertising workflows." },
+  { n: "03", slug: "whatsapp-meta-solutions", title: "WhatsApp & Meta Solutions", copy: "Practical communication and conversational workflows built around Meta platforms." },
+  { n: "04", slug: "meta-proxy", title: "Marketing Tech & Meta Proxy", copy: "A product we are bringing to market to simplify WABA infrastructure, storage and WhatsApp workflows." },
 ];
 
 const projects = [
@@ -182,11 +183,11 @@ function HomePage() {
       <header className="topbar">
         <Brand />
         <nav aria-label="Main navigation">
-          {navItems.map(([label, id]) => label === "About Us" ? <Link key={id} to="/about">{label}</Link> : <a key={id} href={`#${id}`} onClick={(e) => { e.preventDefault(); scrollTo(id); }}>{label}{label === "Services" && <ChevronDown size={12} />}</a>)}
+          {navItems.map(({ label, to }) => <Link key={label} to={to}>{label}</Link>)}
         </nav>
         <a href="tel:22003567890" className="call"><Phone size={17} /><span><small>Call Any Time</small><b>22 (00) 356 7890</b></span></a>
         <button className="menu-toggle" aria-label={menuOpen ? "Close menu" : "Open menu"} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : <Menu />}</button>
-        {menuOpen && <div className="mobile-menu">{navItems.map(([label, id]) => label === "About Us" ? <Link key={id} to="/about" onClick={() => setMenuOpen(false)}>{label}</Link> : <a key={id} href={`#${id}`} onClick={(e) => { e.preventDefault(); setMenuOpen(false); scrollTo(id); }}>{label}</a>)}</div>}
+        {menuOpen && <div className="mobile-menu">{navItems.map(({ label, to }) => <Link key={label} to={to} onClick={() => setMenuOpen(false)}>{label}</Link>)}</div>}
       </header>
 
       <section className="hero section-pad">
@@ -216,8 +217,8 @@ function HomePage() {
       </section>
 
       <section id="services" className="services section-pad split-section">
-         <div className="services-intro" data-reveal><Label>Our Services</Label><h2>Ideas<br />Into Impact.</h2><p>We bring digital solutions, marketing and growth support together so businesses can get the right help without building a full in-house team.</p><Action to="contact" dark>Explore Our Services</Action><span className="scribble services-note ambient-float">Strategy<br />Design<br />Technology<br />Growth<br />Together <ArrowUpRight size={34} /></span></div>
-        <div className="service-list reveal-stagger" data-reveal>{services.map((service) => <a href="#contact" key={service.n} onClick={(e) => { e.preventDefault(); scrollTo("contact"); }}><span>{service.n}</span><div><h3>{service.title}</h3><p>{service.copy}</p></div><ArrowUpRight size={18} /></a>)}</div>
+         <div className="services-intro" data-reveal><Label>Our Services</Label><h2>Ideas<br />Into Impact.</h2><p>We bring digital solutions, marketing and growth support together so businesses can get the right help without building a full in-house team.</p><Link to="/services" className="action action-dark"><span>Explore Our Services</span><ArrowRight size={14} /></Link><span className="scribble services-note ambient-float">Strategy<br />Design<br />Technology<br />Growth<br />Together <ArrowUpRight size={34} /></span></div>
+         <div className="service-list reveal-stagger" data-reveal>{services.map((service) => <Link to="/services" hash={service.slug} key={service.n}><span>{service.n}</span><div><h3>{service.title}</h3><p>{service.copy}</p></div><ArrowUpRight size={18} /></Link>)}</div>
         <div className="service-photo" data-reveal><img src={stillLifeImage} loading="lazy" width={1408} height={912} alt="Brand strategy workspace" /><div className="photo-card">Good<br />Brands<br />Better<br />People<sup>™</sup></div><div className="sticky-note scribble ambient-float">Ideas<br />that<br />work!</div></div>
       </section>
 
@@ -245,8 +246,8 @@ function HomePage() {
 
       <footer className="footer section-pad reveal-stagger" data-reveal>
         <div className="footer-brand"><Brand /><p>A creative agency focused on building brands, products and experiences that make a difference.</p><div><a href="#" aria-label="Instagram"><Instagram /></a><a href="#" aria-label="LinkedIn"><Linkedin /></a><a href="#" aria-label="YouTube"><Youtube /></a></div></div>
-         <div className="footer-links"><b>Quick Links</b>{navItems.slice(0,4).map(([label,id]) => label === "About Us" ? <Link key={id} to="/about">{label}</Link> : <a key={id} href={`#${id}`}>{label}</a>)}</div>
-        <div className="footer-links"><b>Our Services</b>{services.map((s) => <a key={s.n} href="#services">{s.title.replace(" & Identity", "").replace(" & Development", "")}</a>)}</div>
+         <div className="footer-links"><b>Quick Links</b>{navItems.map(({ label, to }) => <Link key={label} to={to}>{label}</Link>)}</div>
+        <div className="footer-links"><b>Our Services</b>{services.map((s) => <Link key={s.n} to="/services" hash={s.slug}>{s.title}</Link>)}</div>
         <div className="footer-links"><b>Resources</b><a href="#projects">Blog</a><a href="#projects">Case Studies</a><a href="#contact">Help Center</a><a href="#">Privacy Policy</a></div>
         <div className="newsletter"><b>Subscribe to our newsletter</b><p>Get the latest updates and insights.</p><div><label className="sr-only" htmlFor="email">Your email address</label><input id="email" type="email" placeholder="Your email address" /><button aria-label="Subscribe"><ArrowRight /></button></div></div>
         <div className="copyright"><span>© 2026 NextBiz Studio. All rights reserved.</span><span><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></span></div>
