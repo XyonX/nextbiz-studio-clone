@@ -30,7 +30,7 @@ const principles = [
 
 const navItems = [
   { label: "Home", to: "/" },
-  { label: "About", to: "/about" },
+  { label: "About Us", to: "/about" },
   { label: "Services", to: "/services" },
 ] as const;
 
