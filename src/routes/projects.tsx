@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowLeft, ArrowRight, ArrowUpRight, Menu, X } from "lucide-react";
+import { ArrowDownRight, ArrowLeft, ArrowRight, Menu, X } from "lucide-react";
 import { useState } from "react";
 
 import aboutImage from "@/assets/nextbiz-about.jpg";
@@ -60,7 +60,7 @@ function ProjectsPage() {
           <h1>Work that carries ideas into the world.</h1>
           <p>A closer look at the projects we've shaped — identities, websites and growth work built around each business and where it wants to go.</p>
           <div className="projects-hero-links" aria-label="Browse projects">
-            {projects.map(({ number, name }) => <a key={name} href={`#project-${number}`}><span>{number}</span>{name}<ArrowDownRightPlaceholder /></a>)}
+            {projects.map(({ number, name }) => <a key={name} href={`#project-${number}`}><span>{number}</span>{name}<ArrowDownRight size={14} /></a>)}
           </div>
         </div>
         <div className="projects-hero-visual"><div className="projects-hero-block" /><img src={teamImage} width={1408} height={800} alt="The NextBiz Studio team reviewing project work" /><span className="scribble projects-hero-note">Made with<br />intent.</span><span className="projects-hero-index">NEXTBIZ <i>/</i> SELECTED WORK</span></div>
@@ -85,8 +85,4 @@ function ProjectsPage() {
       <footer className="about-footer about-pad"><div><ProjectsBrand /><p>A digital team for businesses building what comes next.</p></div><div className="about-footer-links"><b>Explore</b><Link to="/">Home</Link><Link to="/about">About Us</Link><Link to="/services">Services</Link><Link to="/projects">Projects</Link></div><div className="about-footer-mark"><span className="scribble">Built around<br />your business.</span><Link to="/" className="about-back"><ArrowLeft size={14} /> Back to Home</Link></div><div className="about-copyright"><span>© 2026 NextBiz Studio. All rights reserved.</span><span>Made with intent.</span></div></footer>
     </main>
   );
-}
-
-function ArrowDownRightPlaceholder() {
-  return <ArrowUpRight size={14} />;
 }

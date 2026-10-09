@@ -32,6 +32,7 @@ const navItems = [
   { label: "Home", to: "/" },
   { label: "About Us", to: "/about" },
   { label: "Services", to: "/services" },
+  { label: "Projects", to: "/projects" },
 ] as const;
 
 function AboutBrand() {
@@ -121,7 +122,7 @@ function AboutPage() {
 
       <footer className="about-footer about-pad">
         <div><AboutBrand /><p>A creative agency focused on building brands, products and experiences that make a difference.</p></div>
-        <div className="about-footer-links"><b>Explore</b><Link to="/">Home</Link><Link to="/services">Services</Link><a href="#approach">Our approach</a><a href="#team">Our team</a></div>
+        <div className="about-footer-links"><b>Explore</b><Link to="/">Home</Link><Link to="/services">Services</Link><Link to="/projects">Projects</Link><a href="#approach">Our approach</a><a href="#team">Our team</a></div>
         <div className="about-footer-mark"><span className="scribble">Ideas into<br />impact.</span><Link to="/" className="about-back"><ArrowLeft size={14} /> Back to Home</Link></div>
         <div className="about-copyright"><span>© 2026 NextBiz Studio. All rights reserved.</span><span>Made with intent.</span></div>
       </footer>
