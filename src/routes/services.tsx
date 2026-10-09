@@ -38,6 +38,7 @@ const pageLinks = [
   { label: "Home", to: "/" },
   { label: "About Us", to: "/about" },
   { label: "Services", to: "/services" },
+  { label: "Projects", to: "/projects" },
 ] as const;
 
 function ServicesBrand() {
@@ -102,7 +103,7 @@ function ServicesPage() {
 
       <section className="services-cta about-pad"><div className="eyebrow"><span className="eyebrow-orbit">◎</span> Bring us what you’re building</div><div className="services-cta-row"><h2>What could your<br />next step look like?</h2><div><p>Tell us where you want to go. We’ll find the right way to work together.</p><Link to="/" hash="contact" className="about-action"><span>Start a conversation</span><ArrowRight size={15} /></Link></div></div><span className="scribble services-cta-note">Ideas into<br />impact.</span></section>
 
-      <footer className="about-footer about-pad"><div><ServicesBrand /><p>A digital team for businesses building what comes next.</p></div><div className="about-footer-links"><b>Explore</b><Link to="/">Home</Link><Link to="/about">About Us</Link><Link to="/services">Services</Link></div><div className="about-footer-mark"><span className="scribble">Built around<br />your business.</span><Link to="/" className="about-back"><ArrowLeft size={14} /> Back to Home</Link></div><div className="about-copyright"><span>© 2026 NextBiz Studio. All rights reserved.</span><span>Made with intent.</span></div></footer>
+      <footer className="about-footer about-pad"><div><ServicesBrand /><p>A digital team for businesses building what comes next.</p></div><div className="about-footer-links"><b>Explore</b><Link to="/">Home</Link><Link to="/about">About Us</Link><Link to="/services">Services</Link><Link to="/projects">Projects</Link></div><div className="about-footer-mark"><span className="scribble">Built around<br />your business.</span><Link to="/" className="about-back"><ArrowLeft size={14} /> Back to Home</Link></div><div className="about-copyright"><span>© 2026 NextBiz Studio. All rights reserved.</span><span>Made with intent.</span></div></footer>
     </main>
   );
 }

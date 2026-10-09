@@ -49,6 +49,7 @@ const navItems = [
   { label: "Home", to: "/" },
   { label: "About Us", to: "/about" },
   { label: "Services", to: "/services" },
+  { label: "Projects", to: "/projects" },
 ] as const;
 
 const services = [
@@ -223,7 +224,7 @@ function HomePage() {
       </section>
 
       <section id="projects" className="work section-pad">
-        <div className="work-heading" data-reveal><Label>Selected Work</Label><h2>Work That<br />Speaks.</h2><p>A selection of our recent work, crafted with passion and purpose.</p><a href="#projects" className="text-link">View All Projects <ArrowRight size={14} /></a></div>
+        <div className="work-heading" data-reveal><Label>Selected Work</Label><h2>Work That<br />Speaks.</h2><p>A selection of our recent work, crafted with passion and purpose.</p><Link to="/projects" className="text-link">View All Projects <ArrowRight size={14} /></Link></div>
         <div className="project-grid reveal-stagger" data-reveal>{projects.map((project) => <article className="project" key={project.name}><div><img src={project.image} className={project.cls} loading="lazy" alt={`${project.name} project`} /></div><h3>{project.name}<ArrowUpRight size={15} /></h3><p>{project.type}</p></article>)}</div>
       </section>
 
