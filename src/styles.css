@@ -406,6 +406,9 @@ blockquote { animation: quote-enter .42s ease both; }
   .about-brand img { width: 29px; height: 29px; }
   .about-topbar nav { gap: 20px; }
   .services-hero { gap: 35px; }
+  .projects-page { width: calc(100% - 24px); margin: 12px auto; }
+  .projects-hero { gap: 35px; }
+  .projects-chapter { gap: 24px; padding-left: clamp(32px, 5vw, 64px); padding-right: clamp(32px, 5vw, 64px); }
   .services-chapter { gap: 24px; padding-left: clamp(32px, 5vw, 64px); padding-right: clamp(32px, 5vw, 64px); }
   .about-hero { gap: 35px; }
   .about-manifesto { gap: 30px; }
@@ -464,6 +467,7 @@ blockquote { animation: quote-enter .42s ease both; }
   .copyright { gap: 15px; flex-direction: column; }
   .about-page { width: 100%; margin: 0; border-radius: 0; border-left: 0; border-right: 0; }
   .services-page { width: 100%; margin: 0; border-radius: 0; border-left: 0; border-right: 0; }
+  .projects-page { width: 100%; margin: 0; border-radius: 0; border-left: 0; border-right: 0; }
   .about-pad { padding-left: 22px; padding-right: 22px; }
   .about-topbar { min-height: 70px; grid-template-columns: 1fr auto; }
   .about-brand { padding: 0 18px; border: 0; font-size: 13px; gap: 7px; }
@@ -530,6 +534,17 @@ blockquote { animation: quote-enter .42s ease both; }
   .services-cta-row { grid-template-columns: 1fr; gap: 22px; margin-top: 22px; }
   .services-cta-row h2 { font-size: 43px; }
   .services-cta-note { right: 20px; top: auto; bottom: 19px; font-size: 14px; }
+  .projects-hero { grid-template-columns: 1fr; min-height: 0; gap: 40px; padding-top: 58px; padding-bottom: 55px; }
+  .projects-hero h1 { font-size: 46px; letter-spacing: -2px; }
+  .projects-hero-copy > p { font-size: 13px; }
+  .projects-hero-links a { font-size: 9px; }
+  .projects-hero-visual { height: 315px; }
+  .projects-hero-visual > img { width: 92%; }
+  .projects-hero-note { right: 2px; font-size: 17px; }
+  .projects-chapter { grid-template-columns: 1fr; gap: 17px; min-height: 0; padding: 32px 22px 35px; }
+  .projects-chapter-index { padding-top: 0; }
+  .projects-chapter-main h2 { font-size: 33px; }
+  .projects-chapter-image { height: 230px; margin-top: 3px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
