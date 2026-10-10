@@ -7,3 +7,4 @@
 - [x] Add dedicated About page with homepage and return navigation
 - [x] Replace homepage demo messaging with NextBiz Studio business content
 - [x] Build the dedicated Services page and link global navigation to implemented pages only
+- [x] Build dedicated Projects page with demo work content
