@@ -10,10 +10,10 @@ import teamImage from "@/assets/nextbiz-team.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About NextBiz Studio | Creative Partners" },
-      { name: "description", content: "Meet NextBiz Studio: a focused team shaping distinctive brands, digital experiences and ideas built to last." },
-      { property: "og:title", content: "About NextBiz Studio | Creative Partners" },
-      { property: "og:description", content: "A closer look at the people, principles and craft behind NextBiz Studio." },
+      { title: "About NextBiz Studio | Digital Solutions Studio" },
+      { name: "description", content: "Meet NextBiz Studio, a focused technology partner helping businesses build, improve and automate their digital operations." },
+      { property: "og:title", content: "About NextBiz Studio | Digital Solutions Studio" },
+      { property: "og:description", content: "A closer look at the team and practical approach behind NextBiz Studio's digital solutions." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -22,10 +22,10 @@ export const Route = createFileRoute("/about")({
 });
 
 const principles = [
-  ["01", "Form follows feeling", "We pair emotional resonance with functional precision, so every detail earns its place."],
-  ["02", "Radical simplicity", "We remove the noise until the essential idea has room to be remembered."],
-  ["03", "Made, not assembled", "Every identity, interface and interaction is shaped around the brand—not pulled from a kit."],
-  ["04", "Built for the long view", "We make decisions that keep working after the launch moment has passed."],
+  ["01", "Plan around the real need", "We learn how your business works, then identify the problem or opportunity worth solving."],
+  ["02", "Build the right solution", "We choose the right mix of technology, development and expertise for the job—not a preset package."],
+  ["03", "Improve the operation", "We make practical changes that help your systems and day-to-day work perform better."],
+  ["04", "Iterate with purpose", "We keep learning from real use and refine the solution as your business changes."],
 ] as const;
 
 const navItems = [
@@ -70,35 +70,35 @@ function AboutPage() {
 
       <section className="about-hero about-pad" id="about">
         <div className="about-hero-copy">
-          <div className="eyebrow"><span className="eyebrow-orbit">◎</span> Behind the Studio</div>
-          <p className="about-kicker">A small studio with a wide point of view.</p>
-          <h1>We build ideas that outgrow the ordinary.</h1>
-          <p className="about-lede">NextBiz Studio is a creative partner for ambitious people. We turn the early spark into a clear, memorable and useful expression of what comes next.</p>
-          <Link to="/" className="about-action"><span>Back to the home story</span><ArrowRight size={15} /></Link>
+          <div className="eyebrow"><span className="eyebrow-orbit">◎</span> Digital Solutions Studio</div>
+          <p className="about-kicker">Your Digital Team, When You Need It.</p>
+          <h1>Technology built around your business.</h1>
+          <p className="about-lede">NextBiz Studio helps businesses build, improve and automate their digital operations with practical technology shaped around the way they work.</p>
+          <Link to="/services" className="about-action"><span>Explore our capabilities</span><ArrowRight size={15} /></Link>
         </div>
         <div className="about-hero-visual">
           <div className="about-hero-block" />
           <img src={aboutImage} width={1008} height={1104} alt="Creative strategist reviewing work in a sunlit studio" />
-          <span className="scribble about-hero-note">Est. 2018<br />built on craft.</span>
+          <span className="scribble about-hero-note">The right people<br />for what you need.</span>
           <span className="about-hero-index">01 <i>/</i> 04</span>
         </div>
       </section>
 
       <section className="about-manifesto about-pad" id="approach">
-        <div className="about-section-label"><span className="eyebrow-orbit">◎</span> Our point of view</div>
+        <div className="about-section-label"><span className="eyebrow-orbit">◎</span> What we do</div>
         <div className="about-manifesto-copy">
-          <h2>Good work starts<br />with a point of view.</h2>
+          <h2>Useful technology.<br />Meaningful progress.</h2>
           <div>
-            <p>We started NextBiz Studio because the most important brands deserve more than a polished surface. They deserve a clear idea, a considered voice and a world people want to step into.</p>
-            <p>Our team moves between strategy, design and technology without handing the important bits over the wall. That closeness is where the unexpected detail usually appears.</p>
-            <span className="scribble about-manifesto-note">Make it<br />matter <ArrowUpRight size={24} /></span>
+            <p>We work with businesses to understand their needs, find opportunities to improve, and create practical solutions around their operations.</p>
+            <p>That might mean a digital experience, custom software, an internal tool, connected systems, workflow automation or a practical AI solution. We also support marketing and WhatsApp needs, including Meta Proxy, our WhatsApp Business API product being built and prepared for market.</p>
+            <span className="scribble about-manifesto-note">Built around<br />your business <ArrowUpRight size={24} /></span>
           </div>
         </div>
         <div className="about-manifesto-image"><img src={stillLifeImage} loading="lazy" alt="Materials and notes on a creative studio desk" /></div>
       </section>
 
       <section className="about-principles about-pad">
-        <div className="about-principles-heading"><div className="eyebrow"><span className="eyebrow-orbit">◎</span> How we work</div><h2>Four things<br />we believe.</h2></div>
+        <div className="about-principles-heading"><div className="eyebrow"><span className="eyebrow-orbit">◎</span> How we work</div><h2>A clear path<br />from need to impact.</h2></div>
         <div className="principle-list">
           {principles.map(([number, title, copy]) => (
             <article className="principle" key={number}>
@@ -112,16 +112,16 @@ function AboutPage() {
 
       <section className="about-team about-pad" id="team">
         <div className="about-team-image"><img src={teamImage} loading="lazy" alt="The NextBiz Studio team working together" /><span className="scribble about-team-note">Different minds.<br />One direction.</span></div>
-        <div className="about-team-copy"><div className="eyebrow"><span className="eyebrow-orbit">◎</span> The people behind it</div><h2>Small enough<br />to stay close.</h2><p>We are strategists, designers, writers and builders who like to sit at the same table. You get senior thinking from the first conversation, and a team that stays curious all the way through.</p><div className="about-team-meta"><strong>05</strong><span>people<br />in the core studio</span><strong>20+</strong><span>partners<br />across the world</span></div></div>
+        <div className="about-team-copy"><div className="eyebrow"><span className="eyebrow-orbit">◎</span> The people behind it</div><h2>A focused core.<br />The right expertise.</h2><p>NextBiz Studio has a core team of three, supported by trusted collaborators and specialists selected for each project. Together, we bring the technology, development, design, AI and automation skills the work calls for—without layers between you and the people doing the work.</p><div className="about-team-meta"><strong>03</strong><span>people<br />in our core team</span><strong>RIGHT</strong><span>expertise<br />for each project</span></div></div>
       </section>
 
       <section className="about-cta about-pad">
-        <div><div className="eyebrow"><span className="eyebrow-orbit">◎</span> Make the next move</div><h2>Ready to build<br />something unforgettable?</h2></div>
-        <div className="about-cta-side"><ArrowDownRight className="about-cta-arrow" /><p>Bring us the rough idea.<br />We’ll help shape what it can become.</p><Link to="/" className="about-action about-action-dark"><span>Start a conversation</span><ArrowRight size={15} /></Link></div>
+        <div><div className="eyebrow"><span className="eyebrow-orbit">◎</span> Make the next move</div><h2>Have a problem<br />worth solving?</h2></div>
+        <div className="about-cta-side"><ArrowDownRight className="about-cta-arrow" /><p>Bring us the challenge, idea or opportunity.<br />We’ll help find the right way forward.</p><Link to="/services" className="about-action about-action-dark"><span>Explore our capabilities</span><ArrowRight size={15} /></Link></div>
       </section>
 
       <footer className="about-footer about-pad">
-        <div><AboutBrand /><p>A creative agency focused on building brands, products and experiences that make a difference.</p></div>
+        <div><AboutBrand /><p>A digital solutions studio helping businesses build, improve and automate their digital operations.</p></div>
         <div className="about-footer-links"><b>Explore</b><Link to="/">Home</Link><Link to="/services">Services</Link><Link to="/projects">Projects</Link><a href="#approach">Our approach</a><a href="#team">Our team</a></div>
         <div className="about-footer-mark"><span className="scribble">Ideas into<br />impact.</span><Link to="/" className="about-back"><ArrowLeft size={14} /> Back to Home</Link></div>
         <div className="about-copyright"><span>© 2026 NextBiz Studio. All rights reserved.</span><span>Made with intent.</span></div>
