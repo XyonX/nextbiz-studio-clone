@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowDownRight, ArrowLeft, ArrowRight, Menu, X } from "lucide-react";
+import { ArrowDownRight, ArrowLeft, ArrowRight, ArrowUpRight, Menu, X } from "lucide-react";
 import { useState } from "react";
 
 import aboutImage from "@/assets/nextbiz-about.jpg";
@@ -11,10 +11,10 @@ import teamImage from "@/assets/nextbiz-team.jpg";
 export const Route = createFileRoute("/projects")({
   head: () => ({
     meta: [
-      { title: "Selected Work & Projects | NextBiz Studio" },
-      { name: "description", content: "A look at recent NextBiz Studio projects across web design, branding, digital marketing and identity work." },
-      { property: "og:title", content: "Selected Work & Projects | NextBiz Studio" },
-      { property: "og:description", content: "Recent projects across web, branding, marketing and identity work." },
+      { title: "Projects & Selected Work | NextBiz Studio" },
+      { name: "description", content: "Explore selected NextBiz Studio demo projects across web design, branding, digital marketing and identity work." },
+      { property: "og:title", content: "Projects & Selected Work | NextBiz Studio" },
+      { property: "og:description", content: "A selection of project concepts across digital products, marketing and brand identity." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -43,44 +43,33 @@ function ProjectsPage() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <main className="projects-page">
+    <main className="projects-page projects-magazine-page">
       <header className="about-topbar">
         <ProjectsBrand />
-        <nav aria-label="Main navigation">
-          {pageLinks.map(({ label, to }) => <Link key={label} to={to} activeProps={{ className: "projects-nav-active" }}>{label}</Link>)}
-        </nav>
+        <nav aria-label="Main navigation">{pageLinks.map(({ label, to }) => <Link key={label} to={to} activeProps={{ className: "projects-nav-active" }}>{label}</Link>)}</nav>
         <Link to="/" className="about-back"><ArrowLeft size={14} /> Back to Home</Link>
         <button className="about-menu-toggle" aria-label={menuOpen ? "Close menu" : "Open menu"} onClick={() => setMenuOpen((open) => !open)}>{menuOpen ? <X /> : <Menu />}</button>
         {menuOpen && <div className="about-mobile-menu">{pageLinks.map(({ label, to }) => <Link key={label} to={to} onClick={() => setMenuOpen(false)}>{label}</Link>)}<Link to="/" onClick={() => setMenuOpen(false)}><ArrowLeft size={14} /> Back to Home</Link></div>}
       </header>
 
-      <section className="projects-hero about-pad">
-        <div className="projects-hero-copy">
-          <div className="eyebrow"><span className="eyebrow-orbit">◎</span> Selected Work</div>
-          <h1>Work that carries ideas into the world.</h1>
-          <p>A closer look at the projects we've shaped — identities, websites and growth work built around each business and where it wants to go.</p>
-          <div className="projects-hero-links" aria-label="Browse projects">
-            {projects.map(({ number, name }) => <a key={name} href={`#project-${number}`}><span>{number}</span>{name}<ArrowDownRight size={14} /></a>)}
-          </div>
-        </div>
-        <div className="projects-hero-visual"><div className="projects-hero-block" /><img src={teamImage} width={1408} height={800} alt="The NextBiz Studio team reviewing project work" /><span className="scribble projects-hero-note">Made with<br />intent.</span><span className="projects-hero-index">NEXTBIZ <i>/</i> SELECTED WORK</span></div>
+      <section className="projects-magazine-masthead about-pad">
+        <div className="projects-masthead-top"><span>STUDIO JOURNAL / VOL. 01</span><span>SELECTED WORK <i>·</i> 2026</span></div>
+        <h1>Work in<br /><em>the making.</em></h1>
+        <div className="projects-masthead-bottom"><p>A working collection of ideas carried into the world—digital experiences, campaign systems and identities with a point of view.</p><a href="#project-01" className="projects-index-jump"><span>SCROLL THE INDEX</span><ArrowDownRight size={16} /></a><div className="projects-masthead-image"><img src={teamImage} alt="The NextBiz Studio team reviewing project work" /><span>THE STUDIO / AT WORK</span></div></div>
       </section>
 
-      <section className="projects-chapters" aria-label="Selected projects">
-        {projects.map(({ number, name, type, image, cls, copy, tags }, index) => (
-          <article className="projects-chapter" id={`project-${number}`} key={name}>
-            <div className="projects-chapter-index"><span>{number}</span><i />{type}</div>
-            <div className="projects-chapter-main"><h2>{name}</h2><p>{copy}</p><div className="services-offerings" aria-label={`${name} scope`}>{tags.map((tag) => <span key={tag}>{tag}</span>)}</div></div>
-            <div className="projects-chapter-image"><img src={image} className={cls} loading="lazy" alt={`${name} — ${type.toLowerCase()} project`} /><span className="projects-image-number">{number}<i> / 03</i></span></div>
-          </article>
-        ))}
+      <section className="projects-featured about-pad" id="project-01">
+        <div className="projects-featured-top"><span>FEATURED STUDY / 01</span><span>WEB DESIGN · BRANDING</span></div>
+        <div className="projects-featured-layout"><div className="projects-featured-image"><img src={heroImage} className="object-[70%_45%]" alt="NextGen visual identity and web design concept" /><span className="projects-image-index">01 <i>— 03</i></span><span className="projects-image-stamp">NEXT<br />GEN</span></div><div className="projects-featured-copy"><span className="projects-project-type">IDENTITY / DIGITAL</span><h2>NextGen</h2><p>{projects[0].copy}</p><div className="projects-tag-row">{projects[0].tags.map((tag) => <span key={tag}>{tag}</span>)}</div><a href="#project-02" className="projects-case-link"><span>Next in the collection</span><ArrowDownRight size={16} /></a></div></div>
       </section>
 
-      <section className="services-cta about-pad">
-        <div className="eyebrow"><span className="eyebrow-orbit">◎</span> Have something in mind</div>
-        <div className="services-cta-row"><h2>Your project could<br />be next.</h2><div><p>Tell us what you're building. We'll help shape what it can become — and how the work above could look like yours.</p><Link to="/" hash="contact" className="about-action"><span>Start a conversation</span><ArrowRight size={15} /></Link></div></div>
-        <span className="scribble services-cta-note">From idea<br />to impact.</span>
+      <section className="projects-collection about-pad" aria-label="More selected projects">
+        <div className="projects-collection-head"><div><span>THE INDEX / 02—03</span><h2>More from<br />the collection.</h2></div><span>DEMO PROJECTS<br />CONCEPT WORK</span></div>
+        <article className="projects-study projects-study-harmony" id="project-02"><div className="projects-study-photo"><img src={aboutImage} className="object-[50%_24%]" loading="lazy" alt="Harmony digital marketing concept" /><span>02</span></div><div className="projects-study-meta"><div><span>02 / CAMPAIGNS</span><ArrowUpRight size={16} /></div><h3>Harmony</h3><p>{projects[1].copy}</p><div className="projects-tag-row">{projects[1].tags.map((tag) => <span key={tag}>{tag}</span>)}</div></div></article>
+        <article className="projects-study projects-study-velora" id="project-03"><div className="projects-study-photo"><img src={stillLifeImage} className="object-center" loading="lazy" alt="Velora brand identity concept" /><span>03</span></div><div className="projects-study-meta"><div><span>03 / BRAND SYSTEM</span><ArrowUpRight size={16} /></div><h3>Velora</h3><p>{projects[2].copy}</p><div className="projects-tag-row">{projects[2].tags.map((tag) => <span key={tag}>{tag}</span>)}</div></div></article>
       </section>
+
+      <section className="projects-colophon about-pad"><div className="projects-colophon-photo"><img src={teamImage} loading="lazy" alt="The NextBiz Studio team at work" /><span className="scribble">Ideas into<br />impact.</span></div><div className="projects-colophon-copy"><span>END OF VOLUME / 01</span><h2>Your project<br />could be next.</h2><p>These concepts are here to show the range of our work. Bring us what you’re building and we’ll help shape the right next step.</p><Link to="/" hash="contact" className="projects-colophon-link"><span>Start a conversation</span><ArrowRight size={16} /></Link></div><ArrowDownRight className="projects-colophon-mark" size={34} /></section>
 
       <footer className="about-footer about-pad"><div><ProjectsBrand /><p>A digital team for businesses building what comes next.</p></div><div className="about-footer-links"><b>Explore</b><Link to="/">Home</Link><Link to="/about">About Us</Link><Link to="/services">Services</Link><Link to="/projects">Projects</Link></div><div className="about-footer-mark"><span className="scribble">Built around<br />your business.</span><Link to="/" className="about-back"><ArrowLeft size={14} /> Back to Home</Link></div><div className="about-copyright"><span>© 2026 NextBiz Studio. All rights reserved.</span><span>Made with intent.</span></div></footer>
     </main>

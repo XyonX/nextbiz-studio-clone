@@ -9,3 +9,4 @@
 - [x] Build the dedicated Services page and link global navigation to implemented pages only
 - [x] Build dedicated Projects page with demo work content
 - [x] Replace placeholder About page copy with NextBiz Studio business positioning and team details
+- [ ] Redesign About, Services, and Projects with distinct page-specific editorial layouts and custom controls
